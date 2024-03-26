@@ -49,7 +49,7 @@ typedef struct {
 
 typedef struct {
 	PAGE_t _page[8];
-} Screen_t;
+} SSD1306_t;
 
 #endif /* MAIN_SSD1366_H_ */
 
@@ -57,7 +57,7 @@ void ssd1306_init();
 void task_ssd1306_display_text(const void *arg_text);
 void task_ssd1306_display_clear();
 void i2c_master_init();
-void ssd1306_bitmap_picture(Screen_t *, uint8_t *);
-void ssd1306_display_picture(Screen_t *);
-void ssd1306_display_image(Screen_t * , int , int , uint8_t * , int );
+void ssd1306_bitmap_picture(SSD1306_t *, uint8_t *);
+void ssd1306_display_picture(SSD1306_t *);
+void ssd1306_display_image(SSD1306_t * , int , int , uint8_t * , int );
 uint8_t ssd1306_copy_bit(uint8_t , int , uint8_t , int );

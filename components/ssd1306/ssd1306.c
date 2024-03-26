@@ -134,7 +134,7 @@ void task_ssd1306_display_clear() {
 	vTaskDelete(NULL);
 }
 
-void ssd1306_display_image(Screen_t * dev, int page, int seg, uint8_t * images, int width) 
+void ssd1306_display_image(SSD1306_t * dev, int page, int seg, uint8_t * images, int width) 
 {
 	i2c_cmd_handle_t cmd;
 
@@ -184,7 +184,7 @@ uint8_t ssd1306_copy_bit(uint8_t src, int srcBits, uint8_t dst, int dstBits)
 	return _dst;
 }
 
-void ssd1306_bitmap_picture(Screen_t * screen, uint8_t * image)
+void ssd1306_bitmap_picture(SSD1306_t * screen, uint8_t * image)
 {
 	uint8_t wk0, wk1, wk2;
 	uint8_t page = 0;
@@ -215,7 +215,7 @@ void ssd1306_bitmap_picture(Screen_t * screen, uint8_t * image)
 		}
 	}
 }
-void ssd1306_display_picture(Screen_t * screen)
+void ssd1306_display_picture(SSD1306_t * screen)
 {
 	for (int page = 0; page < 8; page++) {
 			ssd1306_display_image(screen, page, 0, screen->_page[page]._segs, 128);
