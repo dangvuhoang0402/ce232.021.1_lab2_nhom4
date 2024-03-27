@@ -87,6 +87,8 @@ void app_main(void)
     SSD1306_t SSD_1306;
     i2c_master_init();
     ssd1306_init();
+    //const char *string1="21522769-PCTT\n\n\n21520864-DVH\n\n\n21522796-HAV"
+    //task_ssd_display_text(string1);
     ssd1306_bitmap_picture(&SSD_1306, uit_logo_map);
     ssd1306_display_picture(&SSD_1306);
     ESP_LOGI(TAG, "Show picture!");
